@@ -384,10 +384,11 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                 .ticket.movieDetail.posterPath);
 
                                     context.read<PageBloc>().add(
-                                        GoToSuccessPage(
-                                            widget.ticket
-                                                .copyWith(totalPrice: total),
-                                            transaction));
+                                          GoToSuccessPage(
+                                              widget.ticket
+                                                  .copyWith(totalPrice: total),
+                                              transaction),
+                                        );
                                   } else {
                                     // #Uang tidak cukup
                                   }

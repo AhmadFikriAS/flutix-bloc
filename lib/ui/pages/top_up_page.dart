@@ -158,7 +158,7 @@ class _TopUpPageState extends State<TopUpPage> {
                                   ? () {
                                       context.read<PageBloc>().add(
                                             GoToSuccessPage(
-                                              null,
+                                              "" as Ticket,
                                               FlutixTransaction(
                                                   userID:
                                                       (userState as UserLoaded)

@@ -29,7 +29,7 @@ class MovieServices {
     var data = json.decode(response.body);
 
     List genres = (data as Map<String, dynamic>)['genres'];
-    late String language;
+    String? language;
 
     switch ((data as Map<String, dynamic>)['original_language'].toString()) {
       case "ja":

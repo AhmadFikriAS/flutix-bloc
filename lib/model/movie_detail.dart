@@ -1,8 +1,8 @@
 part of 'models.dart';
 
 class MovieDetail extends Movie {
-  final List<String> genres;
-  final String language;
+  final List<String>? genres;
+  final String? language;
 
   MovieDetail(Movie movie, {required this.genres, required this.language})
       : super(
@@ -16,13 +16,13 @@ class MovieDetail extends Movie {
   String get genresAndLanguage {
     String s = "";
 
-    for (var genre in genres) {
-      s += genre + (genre != genres.last ? ', ' : '');
+    for (var genre in genres!) {
+      s += genre + (genre != genres?.last ? ', ' : '');
     }
 
     return "$s- $language";
   }
 
   @override
-  List<Object> get props => super.props + [genres, language];
+  List<Object> get props => super.props + [genres!, language!];
 }
