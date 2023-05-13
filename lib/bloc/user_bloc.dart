@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bwa_flutix/model/models.dart';
 import 'package:bwa_flutix/services/services.dart';
 import 'package:equatable/equatable.dart';
@@ -9,7 +7,6 @@ part 'user_event.dart';
 part 'user_state.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
-  @override
   UserState get initialState => UserInitial();
 
   @override

@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bwa_flutix">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    
    <application
         android:label="bwa_flutix"
         android:icon="@mipmap/ic_launcher">

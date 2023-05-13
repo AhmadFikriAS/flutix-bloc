@@ -37,22 +37,16 @@ class BrowseButton extends StatelessWidget {
     switch (genre) {
       case "Horror":
         return "assets/ic_horror.png";
-        break;
       case "Music":
         return "assets/ic_music.png";
-        break;
       case "Action":
         return "assets/ic_action.png";
-        break;
       case "Drama":
         return "assets/ic_drama.png";
-        break;
       case "War":
         return "assets/ic_war.png";
-        break;
       case "Crime":
         return "assets/ic_crime.png";
-        break;
       default:
         return "";
     }

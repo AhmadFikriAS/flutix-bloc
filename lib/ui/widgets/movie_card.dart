@@ -2,7 +2,7 @@ part of 'widgets.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
-  final Function onTap;
+  final Function? onTap;
 
   const MovieCard(this.movie, {Key? key, required this.onTap})
       : super(key: key);
@@ -11,7 +11,7 @@ class MovieCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (onTap != null) {
-          onTap();
+          onTap!();
         }
       },
       child: Container(

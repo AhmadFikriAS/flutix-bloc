@@ -1,7 +1,7 @@
 part of 'widgets.dart';
 
 class TransactionCard extends StatelessWidget {
-  final FlutixTransaction transaction;
+  final FlutixTransaction? transaction;
   final double width;
 
   const TransactionCard(this.transaction, this.width, {Key? key})
@@ -17,8 +17,8 @@ class TransactionCard extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             image: DecorationImage(
-                image: (transaction.picture != null)
-                    ? NetworkImage('${imageBaseURL}w500${transaction.picture}')
+                image: (transaction?.picture != null)
+                    ? NetworkImage('${imageBaseURL}w500${transaction!.picture}')
                     : const AssetImage('assets/bg_topup.png') as ImageProvider,
                 fit: BoxFit.cover)),
       ),
@@ -26,7 +26,7 @@ class TransactionCard extends StatelessWidget {
         children: <Widget>[
           SizedBox(
               width: width - 86,
-              child: Text(transaction.title,
+              child: Text(transaction!.title,
                   style: blackTextFont.copyWith(fontSize: 18),
                   maxLines: 2,
                   overflow: TextOverflow.clip)),
@@ -37,13 +37,13 @@ class TransactionCard extends StatelessWidget {
               width: width - 86,
               child: Text(
                   NumberFormat.currency(locale: 'id', symbol: 'Rp').format(
-                      transaction.amount < 0
-                          ? -transaction.amount
-                          : transaction.amount),
+                      transaction!.amount < 0
+                          ? -transaction!.amount
+                          : transaction!.amount),
                   style: whiteNumberFont.copyWith(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
-                      color: transaction.amount < 0
+                      color: transaction!.amount < 0
                           ? const Color(0xFFFF5C83)
                           : const Color(0xFF3E9D9D)))),
           const SizedBox(
@@ -52,7 +52,7 @@ class TransactionCard extends StatelessWidget {
           SizedBox(
               width: width - 86,
               child: Text(
-                transaction.subtitle,
+                transaction!.subtitle,
                 style: greyTextFont.copyWith(
                     fontSize: 12, fontWeight: FontWeight.w400),
               )),

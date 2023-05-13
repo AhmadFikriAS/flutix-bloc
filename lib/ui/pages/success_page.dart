@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
 class SuccessPage extends StatelessWidget {
-  final Ticket ticket;
+  final Ticket? ticket;
   final FlutixTransaction transaction;
 
   const SuccessPage(this.ticket, this.transaction, {super.key});
@@ -107,8 +107,8 @@ class SuccessPage extends StatelessWidget {
   }
 
   Future<void> processingTicketOrder(BuildContext context) async {
-    context.read<UserBloc>().add(Purchase(ticket.totalPrice));
-    context.read<TicketBloc>().add(BuyTicket(ticket, transaction.userID));
+    context.read<UserBloc>().add(Purchase(ticket!.totalPrice));
+    context.read<TicketBloc>().add(BuyTicket(ticket!, transaction.userID));
 
     await FlutixTransactionServices.saveTransaction(transaction);
   }
