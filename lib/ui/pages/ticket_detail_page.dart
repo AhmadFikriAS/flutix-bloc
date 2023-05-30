@@ -246,9 +246,9 @@ class TicketDetailPage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            QrImage(
+                            QrImageView(
                               version: 6,
-                              foregroundColor: Colors.black,
+                              backgroundColor: Colors.black,
                               errorCorrectionLevel: QrErrorCorrectLevel.M,
                               padding: const EdgeInsets.all(0),
                               size: 100,
